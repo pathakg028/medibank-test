@@ -1,8 +1,19 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+describe(('App component'), () => {
+    test('Display Loading... on screen when isLoading is true', () => {
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+    })
+    test('Remove Loading... from screen when isLoading is is false', () => {
+
+    })
+    test('api call data is arrived', () => {
+
+    })
+    test('total Cat pets count is 7', () => {
+
+    })
+    test('pets are in ascending order', () => {
+
+    })
+})
+
+

@@ -30,26 +30,26 @@ const App = () => {
 
   return (
     <>{isLoading ? (<h1>Loading...</h1>) : <div className="App">
-      <h1>Male</h1>
+      <h1>MALE</h1>
       {
 
         pageData.map((items) => {
           return (
-            (items.pets && items.gender === 'Male') ? items.pets.map((i, idx) => (i.type === 'Cat') ? (< ul key={idx}>
-              <li key={idx}>{i.name}</li>
+            (items.pets && items.gender === 'Male') ? items.pets.map((i, idx, arr) => arr.sort((a, b) => a.name.localeCompare(b.name)) && (i.type === 'Cat') ? (< ul>
+              <li key={items.name}>{i.name}</li>
             </ul>) : null) : null
           )
         })
 
       }
-      <h1>Female</h1>
+      <h1>FEMALE</h1>
       {
         pageData.map((items) => {
 
           return (
-            (items.pets && items.gender === 'Female') ? items.pets.map((i, idx) => (i.type === 'Cat') ? <ul key={idx}>
-              <li key={idx}>{i.name}</li>
-            </ul> : null) : null
+            (items.pets && items.gender === 'Female') ? items.pets.map((i, idx, arr) => arr.sort((a, b) => a.name.localeCompare(b.name)) && (i.type === 'Cat') ? (< ul>
+              <li key={items.name}>{i.name}</li>
+            </ul>) : null) : null
           )
         })
 
