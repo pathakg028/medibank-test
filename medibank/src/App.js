@@ -36,9 +36,9 @@ const App = () => {
       {
         pageData.map((items) => {
           return (
-            (items.pets && items.gender === 'Female') ? items.pets.map((i, idx, arr) => arr.sort((a, b) => (a.name).localeCompare(b.name)) && (i.type === 'Cat') ? (< ul key={idx}>
+            (items.pets && items.gender === 'Female') && items.pets.map((i, idx, arr) => i.type === 'Cat' && (< ul key={idx}>
               <li key={idx}>{i.name}</li>
-            </ul>) : null) : null
+            </ul>))
           )
         })
 
