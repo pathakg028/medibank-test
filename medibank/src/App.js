@@ -35,8 +35,8 @@ const App = () => {
 
         pageData.map((items) => {
           return (
-            (items.pets && items.gender === 'Male') ? items.pets.map((i, idx, arr) => arr.sort((a, b) => a.name.localeCompare(b.name)) && (i.type === 'Cat') ? (< ul>
-              <li key={items.name}>{i.name}</li>
+            (items.pets && items.gender === 'Male') ? items.pets.map((i, idx, arr) => arr.sort((a, b) => a.name.localeCompare(b.name)) && (i.type === 'Cat') ? (< ul key={idx}>
+              <li key={idx}>{i.name}</li>
             </ul>) : null) : null
           )
         })
@@ -47,8 +47,8 @@ const App = () => {
         pageData.map((items) => {
 
           return (
-            (items.pets && items.gender === 'Female') ? items.pets.map((i, idx, arr) => arr.sort((a, b) => a.name.localeCompare(b.name)) && (i.type === 'Cat') ? (< ul>
-              <li key={items.name}>{i.name}</li>
+            (items.pets && items.gender === 'Female') ? items.pets.map((i, idx, arr) => arr.sort((a, b) => a.name.localeCompare(b.name)) && (i.type === 'Cat') ? (< ul key={idx}>
+              <li key={idx}>{i.name}</li>
             </ul>) : null) : null
           )
         })
