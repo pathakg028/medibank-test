@@ -42,7 +42,7 @@ const App = () => {
         })
       }
       <h2>FEMALE</h2>
-      {[femSortedList()]}
+      {femSortedList()}
     </div >}
     </>
   );
