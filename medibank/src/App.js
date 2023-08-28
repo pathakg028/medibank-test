@@ -18,12 +18,21 @@ const App = () => {
     apiData()
   }, []);
 
+  const femSortedList = () => {
+    const female = pageData.filter((female) => female.gender === 'Female').map((item) => item.pets.filter((pet) => pet.type === 'Cat'))
+    let flatArrayFemale = [].concat.apply([], female);
+    const resultFemale = flatArrayFemale.filter((ele) => ele.type === 'Cat')
+    const newArr = [];
+    resultFemale.forEach((item) => {
+      newArr.push(item.name)
+    })
+    return newArr.sort() + '';
+  }
 
   return (
     <>{isLoading ? (<h1>Loading...</h1>) : <div className="App">
       <h2>MALE</h2>
       {
-
         pageData.map((items) => {
           return (
             (items.pets && items.gender === 'Male') ? items.pets.map((i, idx, arr) => arr.sort((a, b) => (a.name).localeCompare(b.name)) && (i.type === 'Cat') ? (< ul key={idx}>
@@ -33,16 +42,7 @@ const App = () => {
         })
       }
       <h2>FEMALE</h2>
-      {
-        pageData.map((items) => {
-          return (
-            (items.pets && items.gender === 'Female') && items.pets.map((i, idx, arr) => i.type === 'Cat' && (< ul key={idx}>
-              <li key={idx}>{i.name}</li>
-            </ul>))
-          )
-        })
-
-      }
+      {[femSortedList()]}
     </div >}
     </>
   );

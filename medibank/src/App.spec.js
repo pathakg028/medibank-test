@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getPets } from '../src/api/apiCall'
+import { getPets } from '../src/api/apiCall';
 
 jest.mock('axios')
 
@@ -35,7 +35,7 @@ describe(('App Component'), () => {
         ];
         axios.get.mockResolvedValue(users)
         const actualresp = await getPets()
-        // console.log(actualresp)
+        console.log(actualresp);
         expect(actualresp).toEqual(users)
     })
 })
