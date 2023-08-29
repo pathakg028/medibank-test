@@ -13,7 +13,6 @@ jest.mock('../src/api/apiCall', () => {
     }
 }
 )
-
 describe(('App Component'), () => {
     const users = [
         {
