@@ -1,7 +1,16 @@
 import axios from 'axios';
 import { getPets } from '../src/api/apiCall';
 
+
 jest.mock('axios')
+
+// const mockfn = jest.fn();
+jest.mock('../src/api/apiCall', () => {
+    return {
+        getPets: jest.fn(),
+    }
+}
+)
 
 describe(('App Component'), () => {
     test('should fetch users', async () => {
@@ -33,7 +42,7 @@ describe(('App Component'), () => {
                 "pets": [{ "name": "Simba", "type": "Cat" }, { "name": "Nemo", "type": "Fish" }]
             }
         ];
-        axios.get.mockResolvedValue(users)
+        getPets.mockImplementation(() => users)
         const actualresp = await getPets()
         console.log(actualresp);
         expect(actualresp).toEqual(users)

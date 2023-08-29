@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getPets } from '../src/api/apiCall'
 
+
 const App = () => {
 
   const [pageData, setPageData] = useState([]);
@@ -26,7 +27,7 @@ const App = () => {
     resultFemale.forEach((item) => {
       newArr.push(item.name)
     })
-    return newArr.sort() + '';
+    return newArr.sort();
   }
 
   return (
@@ -42,7 +43,12 @@ const App = () => {
         })
       }
       <h2>FEMALE</h2>
-      {femSortedList()}
+
+      {femSortedList().map((item, idx) => {
+        return (< ul key={idx}>
+          <li key={idx}>{item}</li>
+        </ul>)
+      })}
     </div >}
     </>
   );
