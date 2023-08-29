@@ -3,7 +3,7 @@ import { getPets } from '../src/api/apiCall';
 import { femSortedList } from '../src/utility/petListsSorting';
 import { maleSortedList } from '../src/utility/petListsSorting';
 
-const App = () => {
+export const App = () => {
 
   const [pageData, setPageData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -21,13 +21,14 @@ const App = () => {
   }, []);
 
   return (
-    <>{isLoading ? (<h1>Loading...</h1>) : <div className="App">
+    <>{isLoading ? (<h1>Loading...</h1>) : <div>
       <h2>MALE</h2>
       {maleSortedList(pageData).map((item, idx) => {
         return (< ul key={idx}>
           <li key={idx}>{item}</li>
         </ul>)
       })}
+
       <h2>FEMALE</h2>
       {femSortedList(pageData).map((item, idx) => {
         return (< ul key={idx}>
