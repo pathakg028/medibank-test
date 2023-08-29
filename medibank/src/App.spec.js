@@ -1,10 +1,7 @@
-import axios from 'axios';
 import { getPets } from '../src/api/apiCall';
-
 
 jest.mock('axios')
 
-// const mockfn = jest.fn();
 jest.mock('../src/api/apiCall', () => {
     return {
         getPets: jest.fn(),
