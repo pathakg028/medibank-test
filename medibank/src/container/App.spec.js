@@ -1,13 +1,13 @@
-import { getPets } from '../src/api/apiCall';
-import { femSortedList } from '../src/utility/petListsSorting';
-import { maleSortedList } from '../src/utility/petListsSorting';
+import { getPets } from '../api/apiCall';
+import { femSortedList } from '../utility/petListsSorting';
+import { maleSortedList } from '../utility/petListsSorting';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
 import { App } from './App';
 
 jest.mock('axios')
 
-jest.mock('../src/api/apiCall', () => {
+jest.mock('../api/apiCall.js', () => {
     return {
         getPets: jest.fn(),
     }

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { contextCreation } from '../App';
+import { contextCreation } from '../container/App';
 
-const Male = () => {
+const FemaleHeading = () => {
     const data = useContext(contextCreation);
     return (<>
         <h1>{data.name}</h1>
@@ -9,4 +9,4 @@ const Male = () => {
     </>
     )
 }
-export default Male;
+export default FemaleHeading;

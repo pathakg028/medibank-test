@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Male = () => {
+const MaleHeading = () => {
     return (
         <h2>Male</h2>
     )
 }
-export default Male;
+export default MaleHeading;

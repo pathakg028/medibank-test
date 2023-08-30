@@ -1,9 +1,11 @@
 import { useState, useEffect, createContext } from 'react';
-import { getPets } from '../src/api/apiCall';
-import { femSortedList } from '../src/utility/petListsSorting';
-import { maleSortedList } from '../src/utility/petListsSorting';
-import Male from './components/Male'
-import Female from './components/Female'
+import { getPets } from '../api/apiCall';
+import { femSortedList } from '../utility/petListsSorting';
+import { maleSortedList } from '../utility/petListsSorting';
+import Male from '../components/MaleHeading'
+import Female from '../components/FemaleHeading'
+import MaleList from '../components/MaleList';
+import FemaleList from '../components/MaleList';
 
 export const contextCreation = createContext();
 let user = {
@@ -32,18 +34,9 @@ export const App = () => {
       <contextCreation.Provider value={user}>
         {isLoading ? (<h1>Loading...</h1>) : <div>
           <Male />
-          {maleSortedList(pageData).map((item, idx) => {
-            return (< ul key={idx}>
-              <li key={idx}>{item}</li>
-            </ul>)
-          })}
-
+          <MaleList pageData={maleSortedList(pageData)} />
           <Female />
-          {femSortedList(pageData).map((item, idx) => {
-            return (< ul key={idx}>
-              <li key={idx}>{item}</li>
-            </ul>)
-          })}
+          <FemaleList pageData={femSortedList(pageData)} />
         </div >}
       </contextCreation.Provider>
     </>
