@@ -5,7 +5,7 @@ import { maleSortedList } from '../utility/petListsSorting';
 import Male from '../components/MaleHeading'
 import Female from '../components/FemaleHeading'
 import MaleList from '../components/MaleList';
-import FemaleList from '../components/MaleList';
+import FemaleList from '../components/FemaleList';
 
 export const contextCreation = createContext();
 let user = {

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const MaleList = ({ pageData }) => {
     return (
@@ -12,4 +13,8 @@ const MaleList = ({ pageData }) => {
 
     )
 }
+MaleList.propTypes = {
+    pageData: PropTypes.array
+};
+
 export default MaleList;
